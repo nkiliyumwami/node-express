@@ -1,10 +1,11 @@
 //Create an express webserver 
 const express = require('express');
-const express = require('express');
 const morgan = require('morgan');
 
-//Brind the module
+//Import the modules
 const campsiteRouter = require('./routes/campsitesRouter');
+const promotionRouter = require('./routes/promotionsRouter');
+const partnerRouter = require('./routes/partnersRouter');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -17,34 +18,14 @@ app.use(morgan('dev'));
 //Using Json Middleware to parse json data 
 app.use(express.json());
 
-//Set the route path
-app.use('/campsites', campsiteRouter)
+//Set the route paths
+app.use('/campsites', campsiteRouter);
+app.use('/promotions', promotionRouter);
+app.use('/partners', partnerRouter);
 
+app.use('/:campsiteId', campsiteRouter);
 
-
-
-
-// app.get('/campsites/:campsiteId', (req, res) => {
-//     res.end(`Will send details of the campsite: ${req.params.campsiteId} to you`);
-// })
-
-// app.post('/campsites/:campsiteId', (req, res) => {
-//     res.statusCode = 403;
-//     res.end(`POST operation not supported on /campsites/${req.params.campsiteId}`);
-// })
-
-// app.put('/campsites/:campsiteId', (req, res) => {
-//     res.write(`Updating the campsite: ${req.params.campsiteId}\n`);
-//     res.end(`Will update the campsite: ${req.body.name} with description: ${req.body.description}`);
-// })
-
-// app.delete('/campsites/:campsiteId', (req, res) => {
-//     res.end(`Deleting campsite: ${req.params.campsiteId}`);
-// })
-
-
-
-
+app.use('/:promotionId', promotionRouter);
 
 
 
@@ -59,7 +40,7 @@ app.use((req, res)=> {
 
 //Use the server or listen to Server
 app.listen(port, hostname, ()=> {
-    console.log(`Express Server running at http:// ${hostname}:${port}/`)
+    console.log(`Express Server running at http://${hostname}:${port}/`)
 });
 
 
