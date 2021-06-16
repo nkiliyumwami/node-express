@@ -3,9 +3,9 @@ const express = require('express');
 const morgan = require('morgan');
 
 //Import the modules
-const campsiteRouter = require('./routes/campsitesRouter');
-const promotionRouter = require('./routes/promotionsRouter');
-const partnerRouter = require('./routes/partnersRouter');
+const campsiteRouter = require('./routes/campsiteRouter');
+const promotionRouter = require('./routes/promotionRouter');
+const partnerRouter = require('./routes/partnerRouter');
 
 const hostname = 'localhost';
 const port = 3000;
