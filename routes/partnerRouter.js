@@ -42,12 +42,5 @@ partnerRouter.route('/:partnerId')
     res.end(`Deleting partner ${req.params.partnerId}`);
 })
 
-
-
-
-
-
-
-
-
+//Export the module so it can be used elsewhere
 module.exports = partnerRouter;

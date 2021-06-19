@@ -23,12 +23,6 @@ app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
 
-app.use('/:campsiteId', campsiteRouter);
-
-app.use('/:promotionId', promotionRouter);
-
-
-
 //Set our server to serve static files
 app.use(express.static(__dirname + '/public'));
 

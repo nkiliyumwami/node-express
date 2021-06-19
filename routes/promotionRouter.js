@@ -45,5 +45,5 @@ promotionRouter.route('/:promotionId')
     res.end(`Will delete promotion ${req.params.promotionId}`);
 })
 
-
+//Export the module so it can be used elsewhere
 module.exports = promotionRouter;
